@@ -1,14 +1,17 @@
-#!/bin/bash -x 
-search(){
+#!/bin/bash
 
-read web
+
+read -p "Enter the document with the list of URLs" web
 
 while read -r file;
 do
   # echo "$file"
   sour=$(curl "$file")
   write=$(echo "$sour" | cat >> write_file )
-  grep -o 'https://[^"]*' write_file.txt >> domains
+  echo "" >> write_file
+  echo "--------------------------------------------------------" >> write_file
+  echo "" >> write_file
+  grep -o 'https://[^"]*' write_file >> domains
 done < "$web"
 
 input="domains"
@@ -100,6 +103,4 @@ do
 done < "$input"
 
 }
-
-search
 
