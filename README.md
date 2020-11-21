@@ -5,5 +5,7 @@ Make sure that all general Linux commands such as grep are installed. If they ar
 following line:
 
 <code>sudo apt-get install grep curl</code>
+
+The file to input by the user should contain more than one URL.
   
  Happy HACKING :)
